@@ -1,9 +1,5 @@
 import playerData from "./playerData.js";
 
-const cards = playerData.map(() => {
-  return <BaseballCard />;
-});
-
 function BaseballCard(props) {
   console.log(props);
   return (
