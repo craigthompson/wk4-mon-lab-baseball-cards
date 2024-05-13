@@ -1,13 +1,31 @@
+import playerData from "./playerData.js";
+
+const cards = playerData.map(() => {
+  return <BaseballCard />;
+});
+
 function BaseballCard(props) {
+  console.log(props);
   return (
     <div className="card">
-      <h2>Player Name goes here</h2>
+      <h2>{props.name}</h2>
+      <img src={props.imgUrl} alt="" />
     </div>
   );
 }
 
 function App() {
-  return <BaseballCard />;
+  const Cards = playerData.map((player) => (
+    <BaseballCard
+      name={player.name}
+      team={player.team}
+      position={player.position}
+      stats={player.stats}
+      imgUrl={player.imgUrl}
+      key={player.cardId}
+    />
+  ));
+  return <>{Cards}</>;
 }
 
 export default App;
