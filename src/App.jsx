@@ -1,11 +1,24 @@
 import playerData from "./playerData.js";
 
 function BaseballCard(props) {
-  console.log(props);
+  // return (
+  //   <div className="card">
+  //     <h2>{props.name}</h2>
+  //     <img src={props.imgUrl} alt="" />
+  //   </div>
+  // );
+  console.log(Object.entries(props.stats));
+  const statsDisplay = Object.entries(props.stats).map(([stat, value]) => (
+    <p>
+      {stat}: {props.stats[stat]}
+    </p>
+  ));
   return (
     <div className="card">
       <h2>{props.name}</h2>
-      <img src={props.imgUrl} alt="" />
+      <p>Team: {props.team}</p>
+      <p>Position: {props.position}</p>
+      {statsDisplay}
     </div>
   );
 }
