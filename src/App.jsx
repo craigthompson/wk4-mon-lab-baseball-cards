@@ -31,7 +31,7 @@ function BaseballCard(props) {
 }
 
 function App() {
-  const Cards = playerData.map((player) => (
+  const cards = playerData.map((player) => (
     <BaseballCard
       name={player.name}
       team={player.team}
@@ -41,7 +41,7 @@ function App() {
       key={player.cardId}
     />
   ));
-  return <>{Cards}</>;
+  return <>{cards}</>;
 }
 
 export default App;
