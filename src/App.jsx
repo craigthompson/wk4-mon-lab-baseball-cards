@@ -15,7 +15,7 @@ function BaseballCard(props) {
     );
   } else {
     const statsDisplay = Object.entries(props.stats).map(([stat, value]) => (
-      <p>
+      <p key={stat}>
         {stat}: {props.stats[stat]}
       </p>
     ));
